@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <iostream>
 #include <stdlib.h>
 #include <time.h>
 //#include <thread>
@@ -54,7 +55,7 @@ int main(int argc, char** argv)
 	srand(time(0));
 	printf("Enter name of new pattern:\n");
 	char name[20];
-	scanf_s("%s", name);
+	std::cin >> name;
 	al_init();
 	al_install_keyboard();
 	al_install_mouse();
@@ -77,7 +78,7 @@ int main(int argc, char** argv)
 
 	ALLEGRO_DISPLAY *okno = al_create_display(SCR_WIDTH, SCR_HEIGHT);
 	al_hide_mouse_cursor(okno);
-	al_set_window_title(okno, "Game of Life Pattern Planner v. 1.0.0");
+	al_set_window_title(okno, "Game of Life Pattern Planner v. 1.0.1");
 	do {
 		//ALLEGRO_COLOR color;
 		ALLEGRO_EVENT events;
