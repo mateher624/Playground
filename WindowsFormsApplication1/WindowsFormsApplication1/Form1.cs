@@ -37,7 +37,9 @@ namespace WindowsFormsApplication1
             return true;
         }
 
-        public static List<Osoba> list1 = new List<Osoba>();
+        //public List<Osoba> list1 = new List<Osoba>();
+        public Osoba[] dowod = new Osoba[10];
+        public int number = 0;
 
         public Form1()
         {
@@ -46,15 +48,18 @@ namespace WindowsFormsApplication1
 
         private void buttonCreate_Click(object sender, EventArgs e)
         {
-            Osoba tmp = new Osoba();
-            tmp.name = editName.Text;
-            tmp.surname = editSurname.Text;
-            tmp.parents = editParent.Text;
-            tmp.gender = comboGender.Text;
-            tmp.pesel = editPesel.Text;
-            tmp.date = dateTimePicker.Value;
-            list1.Add(tmp);
-            listBox.Items.Add(tmp.surname + " " + tmp.name);
+            //Osoba tmp = new Osoba();
+        
+            dowod[number].name = editName.Text;
+            dowod[number].surname = editSurname.Text;
+            dowod[number].parents = editParent.Text;
+            dowod[number].gender = comboGender.Text;
+            dowod[number].pesel = editPesel.Text;
+            dowod[number].date = dateTimePicker.Value;
+            //list1.Add(tmp);
+            listBox.Items.Add(dowod[number].surname + " " + dowod[number].name);
+            number++;
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -64,12 +69,12 @@ namespace WindowsFormsApplication1
 
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            editName.Text = list1[listBox.SelectedIndex].name;
-            editSurname.Text = list1[listBox.SelectedIndex].surname;
-            editParent.Text = list1[listBox.SelectedIndex].parents;
-            comboGender.Text= list1[listBox.SelectedIndex].gender;
-            editPesel.Text = list1[listBox.SelectedIndex].pesel;
-            dateTimePicker.Value = list1[listBox.SelectedIndex].date;
+            editName.Text = dowod[listBox.SelectedIndex].name;
+            editSurname.Text = dowod[listBox.SelectedIndex].surname;
+            editParent.Text = dowod[listBox.SelectedIndex].parents;
+            comboGender.Text= dowod[listBox.SelectedIndex].gender;
+            editPesel.Text = dowod[listBox.SelectedIndex].pesel;
+            dateTimePicker.Value = dowod[listBox.SelectedIndex].date;
         }
 
         private void buttonCheck_Click(object sender, EventArgs e)
