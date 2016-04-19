@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-public struct Osoba
+public class Osoba
 {
     public string name;
     public string surname;
@@ -49,7 +49,7 @@ namespace WindowsFormsApplication1
         private void buttonCreate_Click(object sender, EventArgs e)
         {
             //Osoba tmp = new Osoba();
-        
+            dowod[number] = new Osoba();
             dowod[number].name = editName.Text;
             dowod[number].surname = editSurname.Text;
             dowod[number].parents = editParent.Text;
